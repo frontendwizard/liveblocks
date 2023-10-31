@@ -5,6 +5,10 @@ import { createRoomContext } from "@liveblocks/react";
 const client = createClient({
   throttle: 16,
   publicApiKey: process.env.NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY!,
+
+  // @ts-expect-error Hidden config
+  baseUrl: "http://localhost:3333/",
+  enableDebugLogging: true,
 });
 
 // Presence represents the properties that will exist on every User in the Room
